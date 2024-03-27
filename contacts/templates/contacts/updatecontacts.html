@@ -1,0 +1,23 @@
+{% extends 'contacts/base.html' %}
+{% block 'body' %}
+</br>
+<div class="col-md-6 offset-md-3">
+    <center><h2>Contact of {{ contact.first_name }} {{ contact.last_name }}</h2></center>
+    <br/>
+    <form method="POST" action="">
+        {% csrf_token %}
+    
+        {{ form.as_p }}
+    
+    
+        <br/>
+        <center>
+            <button type="submit" class="btn btn-outline-info btn-lg">Update</button>
+            <a class="btn btn-outline-warning btn-lg" href="{% url 'listcontacts' %}" role="button">Cancel</a>
+            <a class="btn btn-outline-danger btn-lg" href="{% url 'deletecontacts' contact.id %}" role="button">Delete</a>
+        </center>
+    </form>
+ 
+</div>
+
+{% endblock %}
