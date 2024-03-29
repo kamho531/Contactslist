@@ -1,22 +1,23 @@
 {% extends 'contacts/base.html' %}
 {% block 'body' %}
-</br>
-<div class="col-md-6 offset-md-3">
-    <center><h2>Add a contact </h2></center>
-    <br/>
-    <form method="POST" action="{% url 'addcontacts' %}">
-        {% csrf_token %}
-    
-        {{ form.as_p }}
-    
-    
-        <br/>
-        <center><button type="submit" class="btn btn-outline-info btn-lg">Save</button></center>
-    </form>
-    
-    
-    
+</br></br>
+<center>
+    <div class="card" style="width: 28rem;">
+        <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+            Add a contact
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <form method="POST" action="">
+                    {% csrf_token %}               
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-outline-info btn-lg">Save</button>
+                </form>
+            </p>       
+        </div>
 
-</div>
+    </div>       
+</center>
+
 
 {% endblock %}

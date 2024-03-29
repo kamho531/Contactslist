@@ -1,23 +1,25 @@
 {% extends 'contacts/base.html' %}
 {% block 'body' %}
-</br>
-<div class="col-md-6 offset-md-3">
-    <center><h2>Contact of {{ contact.first_name }} {{ contact.last_name }}</h2></center>
-    <br/>
-    <form method="POST" action="">
-        {% csrf_token %}
-    
-        {{ form.as_p }}
-    
-    
-        <br/>
-        <center>
-            <button type="submit" class="btn btn-outline-info btn-lg">Update</button>
-            <a class="btn btn-outline-warning btn-lg" href="{% url 'listcontacts' %}" role="button">Cancel</a>
-            <a class="btn btn-outline-danger btn-lg" href="{% url 'deletecontacts' contact.id %}" role="button">Delete</a>
-        </center>
-    </form>
- 
-</div>
+</br></br>
+<center>
+    <div class="card" style="width: 28rem;">
+        <div class="card-header" style="font-family: Helvetica; font-size: x-large; color: blueviolet;">
+            Contact of {{ contact.first_name }} {{ contact.last_name }}
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <br/>
+                    <button type="submit" class="btn btn-outline-info btn-lg">Update</button>
+                    <a class="btn btn-outline-warning btn-lg" href="{% url 'listcontacts' %}" role="button">Cancel</a>
+                    <a class="btn btn-outline-danger btn-lg" href="{% url 'deletecontacts' contact.id %}" role="button">Delete</a>
+                </form>
+            </p>
+        </div>
+    </div>
+</center>
+
 
 {% endblock %}
