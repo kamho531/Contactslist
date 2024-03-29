@@ -1,1 +1,1 @@
-Contactslist is a Django web application in which users can create, edit and delete their own contacts.
+Contactslist is a web application developed by Django web framework. In the application, users can create, read, update and delete their contacts each has name, email, phone number and comment. All contacts are stored in the Django built-in database, SQLite.
